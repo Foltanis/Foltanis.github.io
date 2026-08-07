@@ -1,9 +1,338 @@
 <!DOCTYPE html>
-<html>
+<html lang="sk">
+<head>
+<script>document.documentElement.classList.add('js');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Štefan Foltán — Herný programátor</title>
+<meta name="description" content="Portfólio herných projektov — Unity, Unreal Engine, AI pre StarCraft: Brood War.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
 <body>
 
-<h1>Test webpage</h1>
-<p>My test paragraph.</p>
+<!-- corner registration marks (fixed, decorative, blueprint sheet feel) -->
+<div class="reg-marks" aria-hidden="true">
+  <span class="reg reg--tl"></span>
+  <span class="reg reg--tr"></span>
+  <span class="reg reg--bl"></span>
+  <span class="reg reg--br"></span>
+</div>
 
+<header class="topbar">
+  <a href="#top" class="topbar__mark">ŠF</a>
+  <nav class="topbar__nav">
+    <a href="#projekty">Projekty</a>
+    <a href="#dalsie">Ďalšie</a>
+    <a href="#nastroje">Nástroje</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+  <button class="topbar__toggle" id="navToggle" aria-label="Otvoriť menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero__grid" aria-hidden="true"></div>
+    <div class="wrap hero__inner">
+      <p class="eyebrow">PORTFÓLIO — HERNÉ PROJEKTY / VÝKRES 00</p>
+      <h1 class="hero__title">ŠTEFAN<br>FOLTÁN</h1>
+      <p class="hero__role">Herný programátor&nbsp;&&nbsp;systémová&nbsp;AI</p>
+      <p class="hero__lede">
+        Od rozhodovacej logiky AI botov cez fyzikálne mechaniky až po tímovú produkciu v Unity —
+        baví ma stavať systémy, ktoré presne dodržiavajú pravidlá, ktoré im dám.
+        Nižšie sú tri projekty, na ktorých je to najlepšie vidieť.
+      </p>
+
+      <!-- title block, ako na spodku technického výkresu -->
+      <div class="titleblock">
+        <div class="titleblock__row titleblock__row--main">
+          <div class="titleblock__cell">
+            <span class="titleblock__k">Meno</span>
+            <span class="titleblock__v">Štefan Foltán</span>
+          </div>
+          <div class="titleblock__cell">
+            <span class="titleblock__k">Rola</span>
+            <span class="titleblock__v">Herný programátor · Študent informatiky, FIIT&nbsp;STU</span>
+          </div>
+          <div class="titleblock__cell">
+            <span class="titleblock__k">Lokalita</span>
+            <span class="titleblock__v">[Mesto], Slovensko</span>
+          </div>
+        </div>
+        <div class="titleblock__row titleblock__row--contact">
+          <a class="contact-link" href="mailto:tvoj@email.sk">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg>
+            tvoj@email.sk
+          </a>
+          <a class="contact-link" href="https://github.com/Foltanis" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.4 9.4 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+            github.com/Foltanis
+          </a>
+          <a class="contact-link" href="tel:+421900000000">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 2 6a2 2 0 0 1 2-2z"/></svg>
+            +421 9XX XXX XXX
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"><span></span>PROJEKTY NIŽŠIE</div>
+  </section>
+
+  <!-- ============ PROJEKTY intro ============ -->
+  <section class="section-intro wrap" id="projekty">
+    <p class="eyebrow">SADA VÝKRESOV / 01 — 03</p>
+    <h2 class="section-title">Vybrané projekty</h2>
+  </section>
+
+  <!-- ============ DWG-01 Bound by Shards ============ -->
+  <section class="sheet" id="bound-by-shards">
+    <div class="wrap">
+      <div class="sheet__head">
+        <span class="sheet__num">DWG—01</span>
+        <div>
+          <h3 class="sheet__title">Bound&nbsp;by&nbsp;Shards</h3>
+          <p class="sheet__meta">Tímový projekt · Unity, C# · [semester / predmet, napr. ZS 2025]</p>
+        </div>
+      </div>
+
+      <div class="sheet__body sheet__body--media-right">
+        <div class="sheet__text">
+          <div class="tags">
+            <span class="tag">Unity</span>
+            <span class="tag">C#</span>
+            <span class="tag">Tímová produkcia</span>
+            <span class="tag">Herná logika</span>
+          </div>
+          <p>
+            Bound by Shards je [žáner hry — napr. 3D akčné dobrodružstvo] vytvorené v tíme
+            počas [názov predmetu / semestra]. Pracovali sme v tíme [počet] ľudí a ja som mal
+            na starosti [DOPLŇ: tvoju konkrétnu úlohu — napr. hernú logiku, prechody medzi
+            scénami, mechaniky, AI nepriateľov...].
+          </p>
+          <p>
+            [DOPLŇ 1–2 vety o tom, čo bolo na projekte technicky najzaujímavejšie / na čo
+            si najviac hrdý — napr. konkrétny systém, ktorý si postavil.]
+          </p>
+          <div class="sheet__links">
+            <a class="btn" href="https://github.com/Foltanis/BoundByShards" target="_blank" rel="noopener">Zdrojový kód ↗</a>
+          </div>
+        </div>
+
+        <div class="sheet__media">
+          <div class="video-embed">
+            <iframe
+              src="https://www.youtube.com/embed/NdumuPEm5-c"
+              title="Bound by Shards — video ukážka"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+          <div class="img-row">
+            <!-- Keď budeš mať obrázok, nahraď celý .img-slot div týmto (zachovaj triedu figure):
+                 <figure class="img-slot img-slot--filled"><img src="assets/images/shards-1.jpg" alt="Bound by Shards — popis zábery"></figure>
+            -->
+            <div class="img-slot">
+              <svg class="img-slot__icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg>
+              <span class="img-slot__label">shards-1.jpg<br><small>napr. hlavná scéna / gameplay záber</small></span>
+            </div>
+            <div class="img-slot">
+              <svg class="img-slot__icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg>
+              <span class="img-slot__label">shards-2.jpg<br><small>napr. detail mechaniky/UI</small></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DWG-02 Sufurky (maturitná práca) ============ -->
+  <section class="sheet" id="sufurky">
+    <div class="wrap">
+      <div class="sheet__head">
+        <span class="sheet__num">DWG—02</span>
+        <div>
+          <h3 class="sheet__title">Sufurky</h3>
+          <p class="sheet__meta">Maturitná práca · Unreal&nbsp;Engine&nbsp;4.27, C++, Blueprinty · SPŠ&nbsp;J.&nbsp;Murgáša, Banská&nbsp;Bystrica · 2021/2022</p>
+        </div>
+      </div>
+
+      <div class="sheet__body sheet__body--media-left">
+        <div class="sheet__media">
+          <div class="img-row img-row--three">
+            <div class="img-slot">
+              <svg class="img-slot__icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg>
+              <span class="img-slot__label">sufurky-1.jpg<br><small>čierna diera pohlcujúca predmety</small></span>
+            </div>
+            <div class="img-slot">
+              <svg class="img-slot__icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg>
+              <span class="img-slot__label">sufurky-2.jpg<br><small>strážca (nepriateľ) na leveli</small></span>
+            </div>
+            <div class="img-slot">
+              <svg class="img-slot__icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg>
+              <span class="img-slot__label">sufurky-3.jpg<br><small>odrazový mostík / cieľová zóna</small></span>
+            </div>
+          </div>
+          <!-- Ak nájdeš/spravíš krátke video, skopíruj video-embed blok z DWG-01 a vlož sem
+               (nahraď YouTube ID svojím). -->
+        </div>
+
+        <div class="sheet__text">
+          <div class="tags">
+            <span class="tag">Unreal Engine 4</span>
+            <span class="tag">C++</span>
+            <span class="tag">Blueprinty</span>
+            <span class="tag">Level design</span>
+          </div>
+          <p>
+            Náročná plošinovka, kde je gameplay jasne nadradený grafike. V každej úrovni musí
+            hráč nájsť a doniesť predmet do cieľovej zóny, pričom sa musí vyhýbať strážcovi —
+            nepriateľovi, ktorý reaguje na zvuk a pri odhalení hráča reštartuje level. Súčasťou
+            máp sú aj čierna diera pohlcujúca predmety, odrazové mostíky a smrtiace zóny;
+            obtiažnosť aj dizajn levelov sa naprieč hrou postupne stupňujú.
+          </p>
+          <p>
+            Väčšinu hernej logiky (streľba, zber predmetov, AI strážcu so „sluchom“, reštart
+            levelu) som naprogramoval priamo v C++, blueprinty som využil najmä na prepojenie
+            so scénou. Bola to prvá práca v Unreal Engine aj prvý väčší 3D projekt vôbec.
+          </p>
+          <div class="sheet__links">
+            <a class="btn btn--todo" href="#">[SEM DAJ ODKAZ NA REPO, ak je verejné] ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DWG-03 StarCraft AI bot (bakalárska práca) ============ -->
+  <section class="sheet" id="starcraft-bot">
+    <div class="wrap">
+      <div class="sheet__head">
+        <span class="sheet__num">DWG—03</span>
+        <div>
+          <h3 class="sheet__title">AI bot pre StarCraft: Brood&nbsp;War</h3>
+          <p class="sheet__meta">Bakalárska práca · C++, BWAPI · FIIT&nbsp;STU Bratislava · vedúci: Ing.&nbsp;Štefan&nbsp;Krištofík,&nbsp;PhD. · 2025</p>
+        </div>
+      </div>
+
+      <div class="sheet__body sheet__body--media-right">
+        <div class="sheet__text">
+          <div class="tags">
+            <span class="tag">C++</span>
+            <span class="tag">BWAPI</span>
+            <span class="tag">Game AI</span>
+            <span class="tag">Dátové testovanie</span>
+          </div>
+          <p>
+            Práca rozširuje pokročilého open-source bota <em>Steamhammer</em> pre RTS hru
+            StarCraft: Brood War. Po analýze slabín v konkrétnych súbojových scenároch (matchupoch)
+            som navrhol a implementoval vylepšenia rozhodovacej logiky — najmä agresivitu pri
+            útoku, výber stratégie a rozpoznávanie súperovej rasy/otvorenia — a každú zmenu
+            overil minimálne na 100 odohratých zápasoch, aby výsledky neboli náhoda.
+          </p>
+          <div class="sheet__links">
+            <a class="btn btn--todo" href="#">[SEM DAJ ODKAZ NA REPO, ak je verejné] ↗</a>
+            <a class="btn btn--todo" href="#">[SEM DAJ ODKAZ NA PDF PRÁCE, voliteľné] ↗</a>
+          </div>
+        </div>
+
+        <div class="sheet__media">
+          <div class="stats">
+            <p class="stats__label">VÝSLEDKY — VÝHERNOSŤ PRED&nbsp;→&nbsp;PO</p>
+            <div class="stat">
+              <span class="stat__name">Terran vs. Protoss <small>(vylepšený bot)</small></span>
+              <div class="stat__bar"><span class="stat__from" style="width:68%"></span><span class="stat__to" style="width:99%"></span></div>
+              <span class="stat__nums">68&nbsp;% → <strong>99&nbsp;%</strong></span>
+            </div>
+            <div class="stat">
+              <span class="stat__name">Protoss vs. Protoss <small>(oba typy botov)</small></span>
+              <div class="stat__bar"><span class="stat__from" style="width:88%"></span><span class="stat__to" style="width:100%"></span></div>
+              <span class="stat__nums">&lt;90&nbsp;% → <strong>100&nbsp;%</strong></span>
+            </div>
+            <div class="stat">
+              <span class="stat__name">Terran vs. Terran <small>(vylepšený bot)</small></span>
+              <div class="stat__bar"><span class="stat__from" style="width:89%"></span><span class="stat__to" style="width:96%"></span></div>
+              <span class="stat__nums">89&nbsp;% → <strong>96&nbsp;%</strong></span>
+            </div>
+            <p class="stats__note">Každý scenár overený na ≥100 zápasoch.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ĎALŠIE PROJEKTY ============ -->
+  <section class="section-intro wrap" id="dalsie">
+    <p class="eyebrow">MENŠIE ŠTÚDIE</p>
+    <h2 class="section-title">Ďalšie projekty</h2>
+  </section>
+
+  <section class="wrap other-projects">
+    <div class="other-card">
+      <div class="other-card__head">
+        <span class="sheet__num sheet__num--sm">DWG—04</span>
+        <h3>Predikcia výsledkov ATP tenisových zápasov</h3>
+      </div>
+      <p>
+        Strojové učenie nad historickými dátami ATP zápasov — vlastné feature engineering
+        (60+ príznakov), logistická regresia, Random Forest a XGBoost (AUC až 0,846),
+        interaktívna aplikácia v Shiny.
+      </p>
+      <div class="tags">
+        <span class="tag">R</span>
+        <span class="tag">XGBoost</span>
+        <span class="tag">Shiny</span>
+        <span class="tag">EDA</span>
+      </div>
+      <a class="btn btn--todo" href="#">[SEM DAJ ODKAZ NA REPO/APLIKÁCIU, ak chceš] ↗</a>
+    </div>
+  </section>
+
+  <!-- ============ NÁSTROJE ============ -->
+  <section class="tools wrap" id="nastroje">
+    <p class="eyebrow">NAPRIEČ PROJEKTAMI</p>
+    <div class="tools__list">
+      <span>Unity</span><span>Unreal Engine 4</span><span>C++</span><span>C#</span>
+      <span>BWAPI</span><span>Python</span><span>R</span><span>Git / GitHub</span>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER / KONTAKT ============ -->
+<footer class="footer" id="kontakt">
+  <div class="wrap footer__inner">
+    <div class="titleblock titleblock--footer">
+      <div class="titleblock__row titleblock__row--main">
+        <div class="titleblock__cell">
+          <span class="titleblock__k">Meno</span>
+          <span class="titleblock__v">Štefan Foltán</span>
+        </div>
+        <div class="titleblock__cell">
+          <span class="titleblock__k">Štúdium</span>
+          <span class="titleblock__v">Ing. Informatika, FIIT STU</span>
+        </div>
+      </div>
+      <div class="titleblock__row titleblock__row--contact">
+        <a class="contact-link" href="mailto:tvoj@email.sk">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg>
+          tvoj@email.sk
+        </a>
+        <a class="contact-link" href="https://github.com/Foltanis" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.4 9.4 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+          github.com/Foltanis
+        </a>
+      </div>
+    </div>
+    <p class="footer__end">— KONIEC SADY VÝKRESOV —</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
