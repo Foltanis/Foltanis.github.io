@@ -89,6 +89,10 @@ a{ color: inherit; }
   transition: color .15s ease;
 }
 .topbar__nav a:hover, .topbar__nav a:focus-visible{ color: var(--accent); }
+.lang-switch{
+  border: 1px solid var(--line-dim); padding: 3px 8px; margin-left: 6px;
+}
+.lang-switch:hover{ border-color: var(--accent); }
 .topbar__toggle{ display:none; }
 
 @media (max-width: 720px){
@@ -263,8 +267,40 @@ a{ color: inherit; }
 .img-slot__icon{ width:26px; height:26px; fill:none; stroke: var(--paper-dim); stroke-width:1.4; }
 .img-slot__label{ font-family: var(--f-mono); font-size:11px; color: var(--paper-dim); line-height:1.5; }
 .img-slot__label small{ color: var(--paper-dim); opacity:.7; font-size:10px; }
-.img-slot--filled{ border-style: solid; padding:0; overflow:hidden; }
-.img-slot--filled img{ width:100%; height:100%; object-fit:cover; display:block; }
+.img-slot--filled{ border-style: solid; padding:0; overflow:hidden; position:relative; cursor: zoom-in; }
+.img-slot--filled img{ width:100%; height:100%; object-fit:cover; display:block; transition: transform .3s ease; }
+.img-slot--filled:hover img{ transform: scale(1.04); }
+.img-slot--filled::after{
+  content:""; position:absolute; top:8px; right:8px; z-index:1;
+  width:28px; height:28px;
+  background-color: rgba(10,27,50,0.75); border:1px solid var(--line-dim);
+  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23EAF3F8' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5'/%3E%3C/svg%3E");
+  background-size: 13px 13px; background-repeat:no-repeat; background-position:center;
+  opacity:0; transition: opacity .15s ease;
+}
+.img-slot--filled:hover::after{ opacity:1; }
+
+/* lightbox overlay (built by script.js) */
+.lightbox{
+  position: fixed; inset:0; z-index: 100;
+  background: rgba(6,16,30,0.92);
+  display:flex; align-items:center; justify-content:center;
+  padding: 5vh 5vw;
+  opacity:0; visibility:hidden; transition: opacity .2s ease;
+}
+.lightbox.is-open{ opacity:1; visibility:visible; }
+.lightbox img{ max-width:100%; max-height: 90vh; border:1px solid var(--line-dim); }
+.lightbox__close{
+  position:absolute; top:22px; right:26px; z-index:2;
+  width:38px; height:38px; display:flex; align-items:center; justify-content:center;
+  background:none; border:1px solid var(--line); color: var(--paper);
+  font-family: var(--f-mono); font-size:18px; cursor:pointer; line-height:1;
+}
+.lightbox__close:hover{ border-color: var(--accent); color: var(--accent); }
+.lightbox__caption{
+  position:absolute; bottom: 22px; left:50%; transform:translateX(-50%);
+  font-family: var(--f-mono); font-size:12px; color: var(--paper-dim); text-align:center;
+}
 
 /* results / stats panel (DWG-03) */
 .stats{ border: 1px solid var(--line-dim); padding: 24px; }
@@ -294,6 +330,28 @@ a{ color: inherit; }
 .other-card__head h3{ font-family: var(--f-display); font-size:19px; margin:2px 0 0; font-weight:600; }
 .sheet__num--sm{ font-size:11px; padding:3px 6px; }
 .other-card p{ color: var(--paper-dim); font-size:15px; margin: 0 0 16px; }
+
+.other-note{
+  font-family: var(--f-mono); font-size: 13px; color: var(--paper-dim);
+  max-width: 640px; margin: 8px 0 32px;
+}
+.other-note a{ color: var(--line); text-decoration: underline; text-decoration-color: var(--line-dim); }
+.other-note a:hover{ color: var(--accent); }
+
+.in-progress{
+  display:flex; align-items:flex-start; gap:20px; max-width: 640px;
+  border: 1px dashed var(--line-dim); padding: 18px 22px;
+}
+.in-progress__stamp{
+  flex-shrink:0; font-family: var(--f-mono); font-size: 11px; font-weight:600;
+  letter-spacing: .1em; color: var(--approve); border: 2px solid var(--approve);
+  padding: 5px 9px; transform: rotate(-6deg); margin-top: 2px;
+}
+.in-progress__label{
+  display:block; font-family: var(--f-mono); font-size: 11px; letter-spacing:.08em;
+  color: var(--paper-dim); text-transform: uppercase; margin-bottom: 6px;
+}
+.in-progress__text p{ margin:0; font-size: 14.5px; color: var(--paper); }
 
 /* =========================================================
    TOOLS STRIP

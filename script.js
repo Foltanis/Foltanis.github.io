@@ -35,3 +35,52 @@ if (prefersReducedMotion) {
 } else {
   revealTargets.forEach(el => el.classList.add('is-visible'));
 }
+
+// Lightbox for filled project images
+(function () {
+  const images = document.querySelectorAll('.img-slot--filled img');
+  if (!images.length) return;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'lightbox';
+  overlay.innerHTML = `
+    <button class="lightbox__close" aria-label="Zavrieť">×</button>
+    <img src="" alt="">
+    <p class="lightbox__caption"></p>
+  `;
+  document.body.appendChild(overlay);
+
+  const overlayImg = overlay.querySelector('img');
+  const overlayCaption = overlay.querySelector('.lightbox__caption');
+  const closeBtn = overlay.querySelector('.lightbox__close');
+  let lastFocused = null;
+
+  function openLightbox(img) {
+    lastFocused = document.activeElement;
+    overlayImg.src = img.src;
+    overlayImg.alt = img.alt || '';
+    overlayCaption.textContent = img.alt || '';
+    overlay.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function closeLightbox() {
+    overlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+    overlayImg.src = '';
+    if (lastFocused) lastFocused.focus();
+  }
+
+  images.forEach(img => {
+    img.addEventListener('click', () => openLightbox(img));
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeLightbox();
+  });
+})();
