@@ -38,8 +38,8 @@ if (prefersReducedMotion) {
 
 // Lightbox for filled project images
 (function () {
-  const images = document.querySelectorAll('.img-slot--filled img');
-  if (!images.length) return;
+  const containers = document.querySelectorAll('.img-slot--filled');
+  if (!containers.length) return;
 
   const overlay = document.createElement('div');
   overlay.className = 'lightbox';
@@ -72,8 +72,14 @@ if (prefersReducedMotion) {
     if (lastFocused) lastFocused.focus();
   }
 
-  images.forEach(img => {
-    img.addEventListener('click', () => openLightbox(img));
+  // Listener on the whole container (not just the <img>), so clicking the
+  // zoom-icon overlay in the corner also opens the lightbox — important for
+  // small thumbnails where the icon covers a big chunk of the image.
+  containers.forEach(container => {
+    container.addEventListener('click', () => {
+      const img = container.querySelector('img');
+      if (img) openLightbox(img);
+    });
   });
 
   closeBtn.addEventListener('click', closeLightbox);
